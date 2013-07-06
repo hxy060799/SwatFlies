@@ -141,6 +141,12 @@
 		A91348931788382C0071B810 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A91348921788382C0071B810 /* AppDelegate.m */; };
 		A91348961788382C0071B810 /* HelloWorldLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = A91348951788382C0071B810 /* HelloWorldLayer.m */; };
 		A91348991788382C0071B810 /* IntroLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = A91348981788382C0071B810 /* IntroLayer.m */; };
+		A914860117883EB1002D553C /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = A914860017883EB1002D553C /* background.png */; };
+		A914860417883F52002D553C /* blood.plist in Resources */ = {isa = PBXBuildFile; fileRef = A914860217883F52002D553C /* blood.plist */; };
+		A914860517883F52002D553C /* blood.png in Resources */ = {isa = PBXBuildFile; fileRef = A914860317883F52002D553C /* blood.png */; };
+		A98C7A1C178839AC00433ECE /* flies.png in Resources */ = {isa = PBXBuildFile; fileRef = A98C7A1A178839AC00433ECE /* flies.png */; };
+		A98C7A1F178839B600433ECE /* flies.plist in Resources */ = {isa = PBXBuildFile; fileRef = A98C7A1E178839B600433ECE /* flies.plist */; };
+		A98C7A2517883A1E00433ECE /* GameLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = A98C7A2417883A1E00433ECE /* GameLayer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -425,6 +431,13 @@
 		A91348951788382C0071B810 /* HelloWorldLayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HelloWorldLayer.m; sourceTree = "<group>"; };
 		A91348971788382C0071B810 /* IntroLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IntroLayer.h; sourceTree = "<group>"; };
 		A91348981788382C0071B810 /* IntroLayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IntroLayer.m; sourceTree = "<group>"; };
+		A914860017883EB1002D553C /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
+		A914860217883F52002D553C /* blood.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = blood.plist; sourceTree = "<group>"; };
+		A914860317883F52002D553C /* blood.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blood.png; sourceTree = "<group>"; };
+		A98C7A1A178839AC00433ECE /* flies.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = flies.png; sourceTree = "<group>"; };
+		A98C7A1E178839B600433ECE /* flies.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = flies.plist; sourceTree = "<group>"; };
+		A98C7A2317883A1E00433ECE /* GameLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameLayer.h; sourceTree = "<group>"; };
+		A98C7A2417883A1E00433ECE /* GameLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameLayer.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -489,6 +502,8 @@
 				A91348921788382C0071B810 /* AppDelegate.m */,
 				A91348941788382C0071B810 /* HelloWorldLayer.h */,
 				A91348951788382C0071B810 /* HelloWorldLayer.m */,
+				A98C7A2317883A1E00433ECE /* GameLayer.h */,
+				A98C7A2417883A1E00433ECE /* GameLayer.m */,
 				A91348971788382C0071B810 /* IntroLayer.h */,
 				A91348981788382C0071B810 /* IntroLayer.m */,
 				A9134701178838280071B810 /* Resources */,
@@ -501,6 +516,11 @@
 		A9134701178838280071B810 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				A914860017883EB1002D553C /* background.png */,
+				A914860217883F52002D553C /* blood.plist */,
+				A914860317883F52002D553C /* blood.png */,
+				A98C7A1A178839AC00433ECE /* flies.png */,
+				A98C7A1E178839B600433ECE /* flies.plist */,
 				A9134702178838280071B810 /* Default.png */,
 				A9134704178838280071B810 /* Default@2x.png */,
 				A9134706178838280071B810 /* Default-568h@2x.png */,
@@ -942,6 +962,11 @@
 				A9134715178838280071B810 /* Icon@2x.png in Resources */,
 				A9134718178838280071B810 /* iTunesArtwork in Resources */,
 				A91348711788382C0071B810 /* ChangeLog in Resources */,
+				A98C7A1C178839AC00433ECE /* flies.png in Resources */,
+				A98C7A1F178839B600433ECE /* flies.plist in Resources */,
+				A914860117883EB1002D553C /* background.png in Resources */,
+				A914860417883F52002D553C /* blood.plist in Resources */,
+				A914860517883F52002D553C /* blood.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1064,6 +1089,7 @@
 				A91348931788382C0071B810 /* AppDelegate.m in Sources */,
 				A91348961788382C0071B810 /* HelloWorldLayer.m in Sources */,
 				A91348991788382C0071B810 /* IntroLayer.m in Sources */,
+				A98C7A2517883A1E00433ECE /* GameLayer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1169,6 +1195,7 @@
 				A913489E1788382C0071B810 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
