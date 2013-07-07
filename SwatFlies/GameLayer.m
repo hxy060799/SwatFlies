@@ -36,6 +36,7 @@ CGSize winSize;
         [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"blood.plist"];
         
         fly=[CCSprite spriteWithSpriteFrameName:@"fly_1.png"];
+        [fly setScale:0.375];
         fly.position=ccp(winSize.width/2,winSize.height/2);
         [self addChild:fly];
         
@@ -44,10 +45,22 @@ CGSize winSize;
 }
 
 -(void)ccTouchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
-    [fly removeFromParent];
-    CCSprite *blood=[CCSprite spriteWithSpriteFrameName:@"blood1.png"];
-    blood.position=ccp(winSize.width/2,winSize.height/2);
-    [self addChild:blood];
+    
+    CGPoint touchLocation=[self locationFromTouches:touches];
+    
+    if(CGRectContainsPoint(fly.boundingBox, touchLocation)){
+        [fly removeFromParent];
+        CCSprite *blood=[CCSprite spriteWithSpriteFrameName:@"blood1.png"];
+        blood.position=ccp(winSize.width/2,winSize.height/2);
+        [blood setScale:0.375];
+        [self addChild:blood];
+    }
+}
+
+-(CGPoint)locationFromTouches:(NSSet*)touches{
+    UITouch *touch=[touches anyObject];
+    CGPoint touchLocation=[touch locationInView:[touch view]];
+    return [[CCDirector sharedDirector]convertToGL:touchLocation];
 }
 
 @end
