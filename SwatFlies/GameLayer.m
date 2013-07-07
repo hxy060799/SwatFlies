@@ -10,7 +10,8 @@
 
 @implementation GameLayer
 
-CCSprite *fly;
+@synthesize flies;
+
 CGSize winSize;
 
 +(CCScene*)scene{
@@ -26,20 +27,24 @@ CGSize winSize;
         
         self.touchEnabled=YES;
         
+        flies=[[NSMutableArray alloc]init];
+        
         winSize=[[CCDirector sharedDirector]winSize];
+        
+        [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"flies.plist"];
+        [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"blood.plist"];
         
         CCSprite *background=[CCSprite spriteWithFile:@"background.png"];
         background.position=ccp(winSize.width/2,winSize.height/2);
         [self addChild:background];
         
-        [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"flies.plist"];
-        [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"blood.plist"];
-        
-        fly=[CCSprite spriteWithSpriteFrameName:@"fly_1.png"];
-        [fly setScale:0.375];
-        fly.position=ccp(winSize.width/2,winSize.height/2);
-        [self addChild:fly];
-        
+        for(int i=0;i<5;i++){
+            CCSprite *fly=[CCSprite spriteWithSpriteFrameName:@"fly_1.png"];
+            [fly setScale:0.375];
+            fly.position=ccp(50*i,50*i);
+            [self addChild:fly];
+            [flies addObject:fly];
+        }
     }
     return self;
 }
@@ -48,12 +53,15 @@ CGSize winSize;
     
     CGPoint touchLocation=[self locationFromTouches:touches];
     
-    if(CGRectContainsPoint(fly.boundingBox, touchLocation)){
-        [fly removeFromParent];
-        CCSprite *blood=[CCSprite spriteWithSpriteFrameName:@"blood1.png"];
-        blood.position=ccp(winSize.width/2,winSize.height/2);
-        [blood setScale:0.375];
-        [self addChild:blood];
+    for(CCSprite *fly in flies){
+        if(CGRectContainsPoint(fly.boundingBox, touchLocation)){
+            [fly removeFromParent];
+            CCSprite *blood=[CCSprite spriteWithSpriteFrameName:@"blood1.png"];
+            blood.anchorPoint=ccp(0.5,0.5);
+            [blood setScale:0.375];
+            blood.position=ccp(fly.position.x,fly.position.y);
+            [self addChild:blood];
+        }
     }
 }
 

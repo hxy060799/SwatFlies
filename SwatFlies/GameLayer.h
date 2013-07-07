@@ -9,8 +9,10 @@
 #import "cocos2d.h"
 
 @interface GameLayer : CCLayer{
-    
+    NSMutableArray *flies;
 }
+
+@property(retain,nonatomic)NSMutableArray *flies;
 
 +(CCScene*)scene;
 
