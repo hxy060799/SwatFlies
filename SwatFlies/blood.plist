@@ -7,54 +7,54 @@
             <key>blood1.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,132},{114,128}}</string>
-                <key>offset</key>
-                <string>{0,0}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{7,0},{114,128}}</string>
-                <key>sourceSize</key>
-                <string>{128,128}</string>
-            </dict>
-            <key>blood2.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{2,2},{128,128}}</string>
+                <string>{{94,100},{86,96}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{0,0},{128,128}}</string>
+                <string>{{5,0},{86,96}}</string>
                 <key>sourceSize</key>
-                <string>{128,128}</string>
+                <string>{96,96}</string>
+            </dict>
+            <key>blood2.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{2,2},{96,96}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{96,96}}</string>
+                <key>sourceSize</key>
+                <string>{96,96}</string>
             </dict>
             <key>blood3.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{132,2},{128,118}}</string>
+                <string>{{2,100},{96,90}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{0,5},{128,118}}</string>
+                <string>{{0,3},{96,90}}</string>
                 <key>sourceSize</key>
-                <string>{128,128}</string>
+                <string>{96,96}</string>
             </dict>
             <key>blood4.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{132,132},{128,104}}</string>
+                <string>{{100,2},{96,78}}</string>
                 <key>offset</key>
-                <string>{0,1}</string>
+                <string>{0,0}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{0,11},{128,104}}</string>
+                <string>{{0,9},{96,78}}</string>
                 <key>sourceSize</key>
-                <string>{128,128}</string>
+                <string>{96,96}</string>
             </dict>
         </dict>
         <key>metadata</key>
@@ -64,9 +64,9 @@
             <key>realTextureFileName</key>
             <string>blood.png</string>
             <key>size</key>
-            <string>{256,512}</string>
+            <string>{256,256}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:e2f34f16e607aab170f2b9922e522e39$</string>
+            <string>$TexturePacker:SmartUpdate:8a01224c041051eb858f0ad7455650f8$</string>
             <key>textureFileName</key>
             <string>blood.png</string>
         </dict>

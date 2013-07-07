@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A902EDE71789A62D00B76076 /* flies.plist in Resources */ = {isa = PBXBuildFile; fileRef = A902EDE51789A62D00B76076 /* flies.plist */; };
+		A902EDE81789A62D00B76076 /* flies.png in Resources */ = {isa = PBXBuildFile; fileRef = A902EDE61789A62D00B76076 /* flies.png */; };
+		A902EDEB1789A63B00B76076 /* blood.plist in Resources */ = {isa = PBXBuildFile; fileRef = A902EDE91789A63B00B76076 /* blood.plist */; };
+		A902EDEC1789A63B00B76076 /* blood.png in Resources */ = {isa = PBXBuildFile; fileRef = A902EDEA1789A63B00B76076 /* blood.png */; };
 		A91346ED178838280071B810 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A91346EC178838280071B810 /* QuartzCore.framework */; };
 		A91346EF178838280071B810 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A91346EE178838280071B810 /* OpenGLES.framework */; };
 		A91346F1178838280071B810 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A91346F0178838280071B810 /* OpenAL.framework */; };
@@ -142,14 +146,14 @@
 		A91348961788382C0071B810 /* HelloWorldLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = A91348951788382C0071B810 /* HelloWorldLayer.m */; };
 		A91348991788382C0071B810 /* IntroLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = A91348981788382C0071B810 /* IntroLayer.m */; };
 		A914860117883EB1002D553C /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = A914860017883EB1002D553C /* background.png */; };
-		A914860417883F52002D553C /* blood.plist in Resources */ = {isa = PBXBuildFile; fileRef = A914860217883F52002D553C /* blood.plist */; };
-		A914860517883F52002D553C /* blood.png in Resources */ = {isa = PBXBuildFile; fileRef = A914860317883F52002D553C /* blood.png */; };
-		A98C7A1C178839AC00433ECE /* flies.png in Resources */ = {isa = PBXBuildFile; fileRef = A98C7A1A178839AC00433ECE /* flies.png */; };
-		A98C7A1F178839B600433ECE /* flies.plist in Resources */ = {isa = PBXBuildFile; fileRef = A98C7A1E178839B600433ECE /* flies.plist */; };
 		A98C7A2517883A1E00433ECE /* GameLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = A98C7A2417883A1E00433ECE /* GameLayer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A902EDE51789A62D00B76076 /* flies.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = flies.plist; sourceTree = "<group>"; };
+		A902EDE61789A62D00B76076 /* flies.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = flies.png; sourceTree = "<group>"; };
+		A902EDE91789A63B00B76076 /* blood.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = blood.plist; sourceTree = "<group>"; };
+		A902EDEA1789A63B00B76076 /* blood.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blood.png; sourceTree = "<group>"; };
 		A91346E9178838280071B810 /* SwatFlies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwatFlies.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A91346EC178838280071B810 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		A91346EE178838280071B810 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -432,10 +436,6 @@
 		A91348971788382C0071B810 /* IntroLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IntroLayer.h; sourceTree = "<group>"; };
 		A91348981788382C0071B810 /* IntroLayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IntroLayer.m; sourceTree = "<group>"; };
 		A914860017883EB1002D553C /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
-		A914860217883F52002D553C /* blood.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = blood.plist; sourceTree = "<group>"; };
-		A914860317883F52002D553C /* blood.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blood.png; sourceTree = "<group>"; };
-		A98C7A1A178839AC00433ECE /* flies.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = flies.png; sourceTree = "<group>"; };
-		A98C7A1E178839B600433ECE /* flies.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = flies.plist; sourceTree = "<group>"; };
 		A98C7A2317883A1E00433ECE /* GameLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameLayer.h; sourceTree = "<group>"; };
 		A98C7A2417883A1E00433ECE /* GameLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameLayer.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -516,11 +516,11 @@
 		A9134701178838280071B810 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				A902EDE91789A63B00B76076 /* blood.plist */,
+				A902EDEA1789A63B00B76076 /* blood.png */,
+				A902EDE51789A62D00B76076 /* flies.plist */,
+				A902EDE61789A62D00B76076 /* flies.png */,
 				A914860017883EB1002D553C /* background.png */,
-				A914860217883F52002D553C /* blood.plist */,
-				A914860317883F52002D553C /* blood.png */,
-				A98C7A1A178839AC00433ECE /* flies.png */,
-				A98C7A1E178839B600433ECE /* flies.plist */,
 				A9134702178838280071B810 /* Default.png */,
 				A9134704178838280071B810 /* Default@2x.png */,
 				A9134706178838280071B810 /* Default-568h@2x.png */,
@@ -962,11 +962,11 @@
 				A9134715178838280071B810 /* Icon@2x.png in Resources */,
 				A9134718178838280071B810 /* iTunesArtwork in Resources */,
 				A91348711788382C0071B810 /* ChangeLog in Resources */,
-				A98C7A1C178839AC00433ECE /* flies.png in Resources */,
-				A98C7A1F178839B600433ECE /* flies.plist in Resources */,
 				A914860117883EB1002D553C /* background.png in Resources */,
-				A914860417883F52002D553C /* blood.plist in Resources */,
-				A914860517883F52002D553C /* blood.png in Resources */,
+				A902EDE71789A62D00B76076 /* flies.plist in Resources */,
+				A902EDE81789A62D00B76076 /* flies.png in Resources */,
+				A902EDEB1789A63B00B76076 /* blood.plist in Resources */,
+				A902EDEC1789A63B00B76076 /* blood.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

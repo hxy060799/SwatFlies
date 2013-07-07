@@ -57,7 +57,7 @@ CGSize winSize;
     int flyId=arc4random()%7+1;
     
     CCSprite *fly=[CCSprite spriteWithSpriteFrameName:[NSString stringWithFormat:@"fly_%i.png",flyId]];
-    [fly setScale:0.375];
+    [fly setScale:0.5];
     
     BOOL posision_OK=NO;
     
@@ -93,7 +93,7 @@ CGSize winSize;
             int bloodId=arc4random()%4+1;
             CCSprite *blood=[CCSprite spriteWithSpriteFrameName:[NSString stringWithFormat:@"blood%i.png",bloodId]];
             blood.anchorPoint=ccp(0.5,0.5);
-            [blood setScale:0.375];
+            [blood setScale:0.5];
             blood.position=flyPosition;
             blood.rotation=arc4random()*(180+1);
             
