@@ -7,93 +7,93 @@
             <key>fly_1.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,128},{36,44}}</string>
-                <key>offset</key>
-                <string>{0,-2}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{6,4},{36,44}}</string>
-                <key>sourceSize</key>
-                <string>{48,48}</string>
-            </dict>
-            <key>fly_2.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{2,50},{38,44}}</string>
-                <key>offset</key>
-                <string>{0,-2}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{5,4},{38,44}}</string>
-                <key>sourceSize</key>
-                <string>{48,48}</string>
-            </dict>
-            <key>fly_3.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{50,2},{42,46}}</string>
-                <key>offset</key>
-                <string>{-1,-1}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{2,2},{42,46}}</string>
-                <key>sourceSize</key>
-                <string>{48,48}</string>
-            </dict>
-            <key>fly_4.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{48,92},{36,44}}</string>
-                <key>offset</key>
-                <string>{-4,0}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{2,2},{36,44}}</string>
-                <key>sourceSize</key>
-                <string>{48,48}</string>
-            </dict>
-            <key>fly_5.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{2,90},{44,36}}</string>
-                <key>offset</key>
-                <string>{2,-1}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{4,7},{44,36}}</string>
-                <key>sourceSize</key>
-                <string>{48,48}</string>
-            </dict>
-            <key>fly_6.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{2,2},{46,46}}</string>
+                <string>{{72,82},{28,38}}</string>
                 <key>offset</key>
                 <string>{1,-1}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{2,2},{46,46}}</string>
+                <string>{{7,2},{28,38}}</string>
                 <key>sourceSize</key>
-                <string>{48,48}</string>
+                <string>{40,40}</string>
+            </dict>
+            <key>fly_2.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{40,82},{30,38}}</string>
+                <key>offset</key>
+                <string>{1,-1}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{6,2},{30,38}}</string>
+                <key>sourceSize</key>
+                <string>{40,40}</string>
+            </dict>
+            <key>fly_3.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{2,82},{36,38}}</string>
+                <key>offset</key>
+                <string>{-1,-1}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{1,2},{36,38}}</string>
+                <key>sourceSize</key>
+                <string>{40,40}</string>
+            </dict>
+            <key>fly_4.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{42,2},{30,38}}</string>
+                <key>offset</key>
+                <string>{-3,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{2,1},{30,38}}</string>
+                <key>sourceSize</key>
+                <string>{40,40}</string>
+            </dict>
+            <key>fly_5.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{40,42},{38,32}}</string>
+                <key>offset</key>
+                <string>{1,-2}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{2,6},{38,32}}</string>
+                <key>sourceSize</key>
+                <string>{40,40}</string>
+            </dict>
+            <key>fly_6.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{2,2},{38,38}}</string>
+                <key>offset</key>
+                <string>{1,-1}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{2,2},{38,38}}</string>
+                <key>sourceSize</key>
+                <string>{40,40}</string>
             </dict>
             <key>fly_7.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{50,46},{44,44}}</string>
+                <string>{{2,42},{36,38}}</string>
                 <key>offset</key>
-                <string>{1,-2}</string>
+                <string>{1,-1}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{3,4},{44,44}}</string>
+                <string>{{3,2},{36,38}}</string>
                 <key>sourceSize</key>
-                <string>{48,48}</string>
+                <string>{40,40}</string>
             </dict>
         </dict>
         <key>metadata</key>
@@ -101,13 +101,13 @@
             <key>format</key>
             <integer>2</integer>
             <key>realTextureFileName</key>
-            <string>flies.png</string>
+            <string>flies-ipad.png</string>
             <key>size</key>
-            <string>{128,256}</string>
+            <string>{128,128}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:3b9ed0128e828800b3f7ffaad5a90f1b$</string>
+            <string>$TexturePacker:SmartUpdate:d1ea216c53652a068b8a237e317d5add$</string>
             <key>textureFileName</key>
-            <string>flies.png</string>
+            <string>flies-ipad.png</string>
         </dict>
     </dict>
 </plist>

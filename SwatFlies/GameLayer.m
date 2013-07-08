@@ -11,6 +11,7 @@
 @implementation GameLayer
 
 @synthesize flies;
+@synthesize winSize;
 
 CGSize winSize;
 
@@ -54,28 +55,30 @@ CGSize winSize;
 
 -(void)addFly{
     
+    int width=winSize.width;
+    int height=winSize.height;
+    
     int flyId=arc4random()%7+1;
     
     CCSprite *fly=[CCSprite spriteWithSpriteFrameName:[NSString stringWithFormat:@"fly_%i.png",flyId]];
-    [fly setScale:0.5];
     
     BOOL posision_OK=NO;
     
     CGPoint flyPosition;
     
+    
     //保证苍蝇不重叠（苍蝇数量较多时这种算法比较耗资源）
     while(posision_OK==NO){
         posision_OK=YES;
-        flyPosition=ccp(arc4random()%(480+1),arc4random()%(320+1));
-        CGRect flyRect=CGRectMake(flyPosition.x-48/2, flyPosition.y-48/2, 48, 48);
-        for(CCSprite *fly in flies){
-            if(CGRectIntersectsRect(fly.boundingBox,flyRect)){
+        flyPosition=ccp(arc4random()%(width+1),arc4random()%(height+1));
+        fly.position=flyPosition;
+        for(CCSprite *fly_ in flies){
+            if(CGRectIntersectsRect(fly_.boundingBox,fly.boundingBox)){
                 posision_OK=NO;
             }
         }
     }
     
-    fly.position=flyPosition;
     [self addChild:fly];
     [flies addObject:fly];
 }
@@ -93,7 +96,6 @@ CGSize winSize;
             int bloodId=arc4random()%4+1;
             CCSprite *blood=[CCSprite spriteWithSpriteFrameName:[NSString stringWithFormat:@"blood%i.png",bloodId]];
             blood.anchorPoint=ccp(0.5,0.5);
-            [blood setScale:0.5];
             blood.position=flyPosition;
             blood.rotation=arc4random()*(180+1);
             

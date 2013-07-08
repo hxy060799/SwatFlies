@@ -10,9 +10,11 @@
 
 @interface GameLayer : CCLayer{
     NSMutableArray *flies;
+    CGSize winSize;
 }
 
 @property(retain,nonatomic)NSMutableArray *flies;
+@property(assign,nonatomic)CGSize winSize;
 
 +(CCScene*)scene;
 
