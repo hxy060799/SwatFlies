@@ -141,8 +141,6 @@
 		A91348931788382C0071B810 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A91348921788382C0071B810 /* AppDelegate.m */; };
 		A91348961788382C0071B810 /* HelloWorldLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = A91348951788382C0071B810 /* HelloWorldLayer.m */; };
 		A91348991788382C0071B810 /* IntroLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = A91348981788382C0071B810 /* IntroLayer.m */; };
-		A919CCC3178AB5E900EE20A8 /* 苍蝇拍.png in Resources */ = {isa = PBXBuildFile; fileRef = A919CCC1178AB5E900EE20A8 /* 苍蝇拍.png */; };
-		A919CCC4178AB5E900EE20A8 /* 苍蝇拍拍下.png in Resources */ = {isa = PBXBuildFile; fileRef = A919CCC2178AB5E900EE20A8 /* 苍蝇拍拍下.png */; };
 		A98C7A2517883A1E00433ECE /* GameLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = A98C7A2417883A1E00433ECE /* GameLayer.m */; };
 		A99BE21A178A2E7100D7D737 /* flies-hd.plist in Resources */ = {isa = PBXBuildFile; fileRef = A99BE218178A2E7100D7D737 /* flies-hd.plist */; };
 		A99BE21B178A2E7100D7D737 /* flies-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = A99BE219178A2E7100D7D737 /* flies-hd.png */; };
@@ -165,6 +163,10 @@
 		A9C43C76178AB26F009E199E /* background-ipadhd.png in Resources */ = {isa = PBXBuildFile; fileRef = A9C43C71178AB26F009E199E /* background-ipadhd.png */; };
 		A9C43C77178AB26F009E199E /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = A9C43C72178AB26F009E199E /* background.png */; };
 		A9C43C79178AB567009E199E /* background-iphone5hd.png in Resources */ = {isa = PBXBuildFile; fileRef = A9C43C78178AB567009E199E /* background-iphone5hd.png */; };
+		A9C8316C178C35C200E4CEF2 /* TestLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = A9C8316B178C35C200E4CEF2 /* TestLayer.m */; };
+		A9C8316E178C384E00E4CEF2 /* backgroundWhite.png in Resources */ = {isa = PBXBuildFile; fileRef = A9C8316D178C384E00E4CEF2 /* backgroundWhite.png */; };
+		A9C83171178C3AA900E4CEF2 /* flySwatterTest.plist in Resources */ = {isa = PBXBuildFile; fileRef = A9C8316F178C3AA900E4CEF2 /* flySwatterTest.plist */; };
+		A9C83172178C3AA900E4CEF2 /* flySwatterTest.png in Resources */ = {isa = PBXBuildFile; fileRef = A9C83170178C3AA900E4CEF2 /* flySwatterTest.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -449,8 +451,6 @@
 		A91348951788382C0071B810 /* HelloWorldLayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HelloWorldLayer.m; sourceTree = "<group>"; };
 		A91348971788382C0071B810 /* IntroLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IntroLayer.h; sourceTree = "<group>"; };
 		A91348981788382C0071B810 /* IntroLayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IntroLayer.m; sourceTree = "<group>"; };
-		A919CCC1178AB5E900EE20A8 /* 苍蝇拍.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "苍蝇拍.png"; sourceTree = "<group>"; };
-		A919CCC2178AB5E900EE20A8 /* 苍蝇拍拍下.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "苍蝇拍拍下.png"; sourceTree = "<group>"; };
 		A98C7A2317883A1E00433ECE /* GameLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameLayer.h; sourceTree = "<group>"; };
 		A98C7A2417883A1E00433ECE /* GameLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameLayer.m; sourceTree = "<group>"; };
 		A99BE218178A2E7100D7D737 /* flies-hd.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "flies-hd.plist"; sourceTree = "<group>"; };
@@ -474,6 +474,11 @@
 		A9C43C71178AB26F009E199E /* background-ipadhd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background-ipadhd.png"; sourceTree = "<group>"; };
 		A9C43C72178AB26F009E199E /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
 		A9C43C78178AB567009E199E /* background-iphone5hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background-iphone5hd.png"; sourceTree = "<group>"; };
+		A9C8316A178C35C200E4CEF2 /* TestLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestLayer.h; sourceTree = "<group>"; };
+		A9C8316B178C35C200E4CEF2 /* TestLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestLayer.m; sourceTree = "<group>"; };
+		A9C8316D178C384E00E4CEF2 /* backgroundWhite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backgroundWhite.png; sourceTree = "<group>"; };
+		A9C8316F178C3AA900E4CEF2 /* flySwatterTest.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = flySwatterTest.plist; sourceTree = "<group>"; };
+		A9C83170178C3AA900E4CEF2 /* flySwatterTest.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = flySwatterTest.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -540,6 +545,8 @@
 				A91348951788382C0071B810 /* HelloWorldLayer.m */,
 				A98C7A2317883A1E00433ECE /* GameLayer.h */,
 				A98C7A2417883A1E00433ECE /* GameLayer.m */,
+				A9C8316A178C35C200E4CEF2 /* TestLayer.h */,
+				A9C8316B178C35C200E4CEF2 /* TestLayer.m */,
 				A91348971788382C0071B810 /* IntroLayer.h */,
 				A91348981788382C0071B810 /* IntroLayer.m */,
 				A9134701178838280071B810 /* Resources */,
@@ -552,8 +559,9 @@
 		A9134701178838280071B810 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				A919CCC1178AB5E900EE20A8 /* 苍蝇拍.png */,
-				A919CCC2178AB5E900EE20A8 /* 苍蝇拍拍下.png */,
+				A9C8316F178C3AA900E4CEF2 /* flySwatterTest.plist */,
+				A9C83170178C3AA900E4CEF2 /* flySwatterTest.png */,
+				A9C8316D178C384E00E4CEF2 /* backgroundWhite.png */,
 				A9C43C72178AB26F009E199E /* background.png */,
 				A9C43C6F178AB26F009E199E /* background-hd.png */,
 				A9C43C70178AB26F009E199E /* background-ipad.png */,
@@ -1037,8 +1045,9 @@
 				A9C43C76178AB26F009E199E /* background-ipadhd.png in Resources */,
 				A9C43C77178AB26F009E199E /* background.png in Resources */,
 				A9C43C79178AB567009E199E /* background-iphone5hd.png in Resources */,
-				A919CCC3178AB5E900EE20A8 /* 苍蝇拍.png in Resources */,
-				A919CCC4178AB5E900EE20A8 /* 苍蝇拍拍下.png in Resources */,
+				A9C8316E178C384E00E4CEF2 /* backgroundWhite.png in Resources */,
+				A9C83171178C3AA900E4CEF2 /* flySwatterTest.plist in Resources */,
+				A9C83172178C3AA900E4CEF2 /* flySwatterTest.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1162,6 +1171,7 @@
 				A91348961788382C0071B810 /* HelloWorldLayer.m in Sources */,
 				A91348991788382C0071B810 /* IntroLayer.m in Sources */,
 				A98C7A2517883A1E00433ECE /* GameLayer.m in Sources */,
+				A9C8316C178C35C200E4CEF2 /* TestLayer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
