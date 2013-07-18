@@ -35,18 +35,14 @@ CCSprite *flySwatter;
         [self addChild:background];
         
         fly=[CCSprite spriteWithSpriteFrameName:@"fly_1.png"];
-        fly.anchorPoint=ccp(0,0);
-        fly.position=ccp(98,172);
-        [self addChild:fly z:100];
+        fly.position=ccp(10,20);
+        [self addChild:fly z:1];
         
         flySwatter=[CCSprite spriteWithSpriteFrameName:@"苍蝇拍.png"];
-        flySwatter.position=ccp(winSize.width/2,winSize.height/2);
-        [self addChild:flySwatter];
+        flySwatter.position=ccp(10+118,20-36);
+        [self addChild:flySwatter z:2];
         
-        NSLog(@"FlySwatterX:%f,y%f",flySwatter.boundingBox.origin.x,flySwatter.boundingBox.origin.y);
-        NSLog(@"FlySizeW:%f,H%f",fly.boundingBox.size.width,fly.boundingBox.size.height);
-        
-        //98 172
+        //苍蝇拍和苍蝇坐标之间的关系swatter(fly.x+118,fly.y-36)(适用于320*480像素)
     }
     return self;
 }
@@ -56,11 +52,13 @@ CCSprite *flySwatter;
     UITouch *touch=[touches anyObject];
     NSLog(@"%i",touch.tapCount);
     
-    if(touch.tapCount%2==1){
+    if(touch.tapCount%3==1){
         CGPoint touchLocation=[touch locationInView:[touch view]];
         touchLocation=[[CCDirector sharedDirector]convertToGL:touchLocation];
-        //fly.position=touchLocation;
-        //NSLog(@"FlyX:%f,y%f",fly.boundingBox.origin.x,fly.boundingBox.origin.y);
+        fly.position=touchLocation;
+    
+    }else if(touch.tapCount%3==2){
+        flySwatter.position=ccp(fly.position.x+118,fly.position.y-36);
     }else{
         if(swatterDown==NO){
             swatterDown=YES;
@@ -70,7 +68,7 @@ CCSprite *flySwatter;
             [flySwatter setDisplayFrame:[[CCSpriteFrameCache sharedSpriteFrameCache]spriteFrameByName:@"苍蝇拍.png"]];
         }
     }
-        
+    
     return;
 }
 
