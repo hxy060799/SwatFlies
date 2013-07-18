@@ -12,6 +12,12 @@
 
 @synthesize flies;
 @synthesize winSize;
+@synthesize flySwatter;
+@synthesize doingAnimation;
+@synthesize timeRemain;
+@synthesize timeLabel;
+@synthesize scoreLabel;
+@synthesize score;
 
 CGSize winSize;
 
@@ -28,23 +34,53 @@ CGSize winSize;
         
         self.touchEnabled=YES;
         
+        doingAnimation=NO;
+        
+        timeRemain=60;
+        score=0;
+        
         flies=[[NSMutableArray alloc]init];
         
         winSize=[[CCDirector sharedDirector]winSize];
         
         [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"flies.plist"];
         [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"blood.plist"];
+        [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"flySwatterTest.plist"];
+        
+        timeLabel=[CCLabelTTF labelWithString:[NSString stringWithFormat:@"%i",timeRemain] fontName:@"Helvetica" fontSize:20];
+        [timeLabel setColor:ccc3(0, 0, 0)];
+        timeLabel.position=ccp(timeLabel.boundingBox.size.width/2,winSize.height-timeLabel.boundingBox.size.height/2);
+        [self addChild:timeLabel z:5];
+        
+        scoreLabel=[CCLabelTTF labelWithString:[NSString stringWithFormat:@"%i",score] fontName:@"Helvetica" fontSize:20];
+        [scoreLabel setColor:ccc3(0, 0, 0)];
+        scoreLabel.position=ccp(winSize.width-scoreLabel.boundingBox.size.width/2,winSize.height-scoreLabel.boundingBox.size.height/2);
+        [self addChild:scoreLabel z:5];
         
         CCSprite *background=[CCSprite spriteWithFile:@"background.png"];
         background.position=ccp(winSize.width/2,winSize.height/2);
-        [self addChild:background];
+        [self addChild:background z:1];
         
-        [self schedule:@selector(tryAddFly:) interval:0.2];
+        flySwatter=[CCSprite spriteWithSpriteFrameName:@"苍蝇拍.png"];
+        flySwatter.position=ccp(winSize.width/2,winSize.height/2);
+        [self addChild:flySwatter z:4];
+        
+        [self schedule:@selector(tryAddFly) interval:0.2f];
+        [self schedule:@selector(timeGoes) interval:1.0f];
     }
     return self;
 }
 
--(void)tryAddFly:(ccTime)dt{
+-(void)timeGoes{
+    timeRemain-=1;
+    [timeLabel setString:[NSString stringWithFormat:@"%i",timeRemain]];
+    timeLabel.position=ccp(timeLabel.boundingBox.size.width/2,winSize.height-timeLabel.boundingBox.size.height/2);
+    if(timeRemain==0){
+        [self unschedule:@selector(timeGoes)];
+    }
+}
+
+-(void)tryAddFly{
     if([flies count]<15){
         int t=arc4random()%3+1;
         if(t!=3){
@@ -79,36 +115,87 @@ CGSize winSize;
         }
     }
     
-    [self addChild:fly];
+    [self addChild:fly z:3];
     [flies addObject:fly];
 }
 
 -(void)ccTouchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
     
+    if(doingAnimation){
+        return;
+    }
+    
     CGPoint touchLocation=[self locationFromTouches:touches];
     
     for(CCSprite *fly in flies){
         if(CGRectContainsPoint(fly.boundingBox,touchLocation)){
-            CGPoint flyPosition=fly.position;
-            [flies removeObject:fly];
-            [fly removeFromParent];
             
-            int bloodId=arc4random()%4+1;
-            CCSprite *blood=[CCSprite spriteWithSpriteFrameName:[NSString stringWithFormat:@"blood%i.png",bloodId]];
-            blood.anchorPoint=ccp(0.5,0.5);
-            blood.position=flyPosition;
-            blood.rotation=arc4random()*(180+1);
+            //移动苍蝇拍->拍下苍蝇拍->抬起苍蝇拍->苍蝇消除->血出现->血消失
+            //     此过程不对用户的点击做出反应    过程由另一个函数执行
             
-            id delay=[CCDelayTime actionWithDuration:arc4random()%3+1];
-            id fadeout=[CCFadeOut actionWithDuration:1.0];
+            CGPoint targetPosition=ccp(fly.position.x+118,fly.position.y-36);
             
-            [blood runAction:[CCSequence actions:delay,fadeout,nil]];
+            float s=distanceBetweenPoints(flySwatter.position, targetPosition);
+            float v=480.0f;
+            float t=s/v;
             
-            [self addChild:blood];
+            id changeAnimationStateF=[CCCallFunc actionWithTarget:self selector:@selector(changeAnimationState)];
+            id moveSwatter=[CCMoveTo actionWithDuration:t position:targetPosition];
+            id swatFly=[CCCallBlock actionWithBlock:
+                        ^(void){
+                            [flySwatter setDisplayFrame:[[CCSpriteFrameCache sharedSpriteFrameCache]spriteFrameByName:@"苍蝇拍拍下.png"]];
+                        }
+                        ];
+            id delay=[CCDelayTime actionWithDuration:0.3f];
+            id pickSwatter=[CCCallBlock actionWithBlock:
+                            ^(void){
+                                [flySwatter setDisplayFrame:[[CCSpriteFrameCache sharedSpriteFrameCache]spriteFrameByName:@"苍蝇拍.png"]];
+                            }
+                            ];
+            id removeFly=[CCCallFuncND actionWithTarget:self selector:@selector(removeFlyAddBloodWithAction:Fly:) data:fly];
+            [flySwatter runAction:[CCSequence actions:changeAnimationStateF,moveSwatter,swatFly,delay,pickSwatter,removeFly,changeAnimationStateF, nil]];
             
             return;
         }
     }
+}
+
+-(void)changeAnimationState{
+    if(doingAnimation){
+        doingAnimation=NO;
+    }else{
+        doingAnimation=YES;
+    }
+}
+
+float distanceBetweenPoints(CGPoint first,CGPoint second){
+    float deltaX=second.x-first.x;
+    float deltaY=second.y-first.y;
+    return sqrt(deltaX*deltaX+deltaY*deltaY);
+};
+
+-(void)removeFlyAddBloodWithAction:(CCAction*)actoin Fly:(CCSprite*)fly{
+    
+    score+=1;
+    [scoreLabel setString:[NSString stringWithFormat:@"%i",score]];
+    scoreLabel.position=ccp(winSize.width-scoreLabel.boundingBox.size.width/2,winSize.height-scoreLabel.boundingBox.size.height/2);
+    
+    CGPoint flyPosition=fly.position;
+    [flies removeObject:fly];
+    [fly removeFromParent];
+    
+    int bloodId=arc4random()%4+1;
+    CCSprite *blood=[CCSprite spriteWithSpriteFrameName:[NSString stringWithFormat:@"blood%i.png",bloodId]];
+    //blood.anchorPoint=ccp(0.5,0.5);
+    blood.position=flyPosition;
+    blood.rotation=arc4random()*(180+1);
+    
+    id delay=[CCDelayTime actionWithDuration:arc4random()%3+1];
+    id fadeout=[CCFadeOut actionWithDuration:1.0];
+    
+    [blood runAction:[CCSequence actions:delay,fadeout,nil]];
+    
+    [self addChild:blood z:2];
 }
 
 -(CGPoint)locationFromTouches:(NSSet*)touches{

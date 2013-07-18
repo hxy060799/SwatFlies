@@ -38,9 +38,7 @@ CCSprite *flySwatter;
         fly.position=ccp(10,20);
         [self addChild:fly z:1];
         
-        flySwatter=[CCSprite spriteWithSpriteFrameName:@"苍蝇拍.png"];
-        flySwatter.position=ccp(10+118,20-36);
-        [self addChild:flySwatter z:2];
+        
         
         //苍蝇拍和苍蝇坐标之间的关系swatter(fly.x+118,fly.y-36)(适用于320*480像素)
     }
