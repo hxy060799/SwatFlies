@@ -20,8 +20,8 @@
     int timeRemain;
     int score;
     
-    CCLabelTTF *timeLabel;
-    CCLabelTTF *scoreLabel;
+    CCLabelBMFont *timeLabel;
+    CCLabelBMFont *scoreLabel;
 }
 
 @property(retain,nonatomic)NSMutableArray *flies;
@@ -30,8 +30,8 @@
 @property(assign,nonatomic)BOOL doingAnimation;
 @property(assign,nonatomic)int timeRemain;
 @property(assign,nonatomic)int score;
-@property(retain,nonatomic)CCLabelTTF *timeLabel;
-@property(retain,nonatomic)CCLabelTTF *scoreLabel;
+@property(retain,nonatomic)CCLabelBMFont *timeLabel;
+@property(retain,nonatomic)CCLabelBMFont *scoreLabel;
 
 +(CCScene*)scene;
 

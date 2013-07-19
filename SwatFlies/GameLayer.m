@@ -47,14 +47,14 @@ CGSize winSize;
         [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"blood.plist"];
         [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"flySwatterTest.plist"];
         
-        timeLabel=[CCLabelTTF labelWithString:[NSString stringWithFormat:@"%i",timeRemain] fontName:@"Helvetica" fontSize:20];
-        [timeLabel setColor:ccc3(0, 0, 0)];
-        timeLabel.position=ccp(timeLabel.boundingBox.size.width/2,winSize.height-timeLabel.boundingBox.size.height/2);
+        timeLabel=[CCLabelBMFont labelWithString:[NSString stringWithFormat:@"Time:%i",timeRemain] fntFile:@"English.fnt"];
+        timeLabel.anchorPoint=ccp(0,1);
+        timeLabel.position=ccp(0,winSize.height);
         [self addChild:timeLabel z:5];
         
-        scoreLabel=[CCLabelTTF labelWithString:[NSString stringWithFormat:@"%i",score] fontName:@"Helvetica" fontSize:20];
-        [scoreLabel setColor:ccc3(0, 0, 0)];
-        scoreLabel.position=ccp(winSize.width-scoreLabel.boundingBox.size.width/2,winSize.height-scoreLabel.boundingBox.size.height/2);
+        scoreLabel=[CCLabelBMFont labelWithString:[NSString stringWithFormat:@"Score:%i",score] fntFile:@"English.fnt"];
+        scoreLabel.anchorPoint=ccp(1,1);
+        scoreLabel.position=ccp(winSize.width,winSize.height);
         [self addChild:scoreLabel z:5];
         
         CCSprite *background=[CCSprite spriteWithFile:@"background.png"];
@@ -73,8 +73,10 @@ CGSize winSize;
 
 -(void)timeGoes{
     timeRemain-=1;
-    [timeLabel setString:[NSString stringWithFormat:@"%i",timeRemain]];
-    timeLabel.position=ccp(timeLabel.boundingBox.size.width/2,winSize.height-timeLabel.boundingBox.size.height/2);
+    if(log10(timeRemain+1)==(int)log10(timeRemain+1)==0){
+        timeLabel.position=ccp(0,winSize.height);
+    }
+    [timeLabel setString:[NSString stringWithFormat:@"Time:%i",timeRemain]];
     if(timeRemain==0){
         [self unschedule:@selector(timeGoes)];
     }
@@ -177,8 +179,11 @@ float distanceBetweenPoints(CGPoint first,CGPoint second){
 -(void)removeFlyAddBloodWithAction:(CCAction*)actoin Fly:(CCSprite*)fly{
     
     score+=1;
-    [scoreLabel setString:[NSString stringWithFormat:@"%i",score]];
-    scoreLabel.position=ccp(winSize.width-scoreLabel.boundingBox.size.width/2,winSize.height-scoreLabel.boundingBox.size.height/2);
+    [scoreLabel setString:[NSString stringWithFormat:@"Score:%i",score]];
+    if(log10(score)==(int)log10(score)){
+        //1也被包括
+        scoreLabel.position=ccp(winSize.width,winSize.height);
+    }
     
     CGPoint flyPosition=fly.position;
     [flies removeObject:fly];
