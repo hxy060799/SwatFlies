@@ -36,7 +36,7 @@ CGSize winSize;
         
         doingAnimation=NO;
         
-        timeRemain=60;
+        timeRemain=5;
         score=0;
         
         flies=[[NSMutableArray alloc]init];
@@ -79,6 +79,11 @@ CGSize winSize;
     [timeLabel setString:[NSString stringWithFormat:@"Time:%i",timeRemain]];
     if(timeRemain==0){
         [self unschedule:@selector(timeGoes)];
+        [self unschedule:@selector(tryAddFly)];
+        [flySwatter removeFromParent];
+        while(flies.count>0){
+            [self removeFlyAddBloodWithAction:nil Fly:[flies objectAtIndex:0]];
+        }
     }
 }
 
@@ -132,8 +137,8 @@ CGSize winSize;
     for(CCSprite *fly in flies){
         if(CGRectContainsPoint(fly.boundingBox,touchLocation)){
             
-            //移动苍蝇拍->拍下苍蝇拍->抬起苍蝇拍->苍蝇消除->血出现->血消失
-            //     此过程不对用户的点击做出反应    过程由另一个函数执行
+            //移动苍蝇拍->拍下苍蝇拍->抬起苍蝇拍->苍蝇消除->血出现->星星粒子->血消失
+            //     此过程不对用户的点击做出反应        过程由另一个函数执行
             
             CGPoint targetPosition=ccp(fly.position.x+118,fly.position.y-36);
             
@@ -201,6 +206,10 @@ float distanceBetweenPoints(CGPoint first,CGPoint second){
     [blood runAction:[CCSequence actions:delay,fadeout,nil]];
     
     [self addChild:blood z:2];
+    
+    CCParticleSystemQuad *particle=[CCParticleSystemQuad particleWithFile:@"swatFlyStars.plist"];
+    particle.position=ccp(flyPosition.x,flyPosition.y);
+    [self addChild:particle z:3];
 }
 
 -(CGPoint)locationFromTouches:(NSSet*)touches{
