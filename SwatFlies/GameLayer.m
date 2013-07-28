@@ -36,7 +36,7 @@ CGSize winSize;
         
         doingAnimation=NO;
         
-        timeRemain=5;
+        timeRemain=30;
         score=0;
         
         flies=[[NSMutableArray alloc]init];
@@ -73,17 +73,19 @@ CGSize winSize;
 
 -(void)timeGoes{
     timeRemain-=1;
-    if(log10(timeRemain+1)==(int)log10(timeRemain+1)==0){
-        timeLabel.position=ccp(0,winSize.height);
-    }
     [timeLabel setString:[NSString stringWithFormat:@"Time:%i",timeRemain]];
     if(timeRemain==0){
         [self unschedule:@selector(timeGoes)];
         [self unschedule:@selector(tryAddFly)];
         [flySwatter removeFromParent];
-        while(flies.count>0){
-            [self removeFlyAddBloodWithAction:nil Fly:[flies objectAtIndex:0]];
-        }
+        
+        [self removeAllFlies];
+    }
+}
+
+-(void)removeAllFlies{
+    while(flies.count>0){
+        [self removeFlyAddBloodWithAction:nil Fly:[flies objectAtIndex:0]];
     }
 }
 
@@ -137,6 +139,9 @@ CGSize winSize;
     for(CCSprite *fly in flies){
         if(CGRectContainsPoint(fly.boundingBox,touchLocation)){
             
+            score+=1;
+            [scoreLabel setString:[NSString stringWithFormat:@"Score:%i",score]];
+            
             //移动苍蝇拍->拍下苍蝇拍->抬起苍蝇拍->苍蝇消除->血出现->星星粒子->血消失
             //     此过程不对用户的点击做出反应        过程由另一个函数执行
             
@@ -182,13 +187,6 @@ float distanceBetweenPoints(CGPoint first,CGPoint second){
 };
 
 -(void)removeFlyAddBloodWithAction:(CCAction*)actoin Fly:(CCSprite*)fly{
-    
-    score+=1;
-    [scoreLabel setString:[NSString stringWithFormat:@"Score:%i",score]];
-    if(log10(score)==(int)log10(score)){
-        //1也被包括
-        scoreLabel.position=ccp(winSize.width,winSize.height);
-    }
     
     CGPoint flyPosition=fly.position;
     [flies removeObject:fly];
